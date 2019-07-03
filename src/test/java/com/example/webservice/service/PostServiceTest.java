@@ -19,7 +19,7 @@ import com.example.webservice.dto.PostsSaveRequestDto;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-//@ActiveProfiles("application") // Like this
+@ActiveProfiles("application") // Like this
 public class PostServiceTest {
 
 	@Autowired
