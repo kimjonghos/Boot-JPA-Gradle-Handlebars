@@ -12,10 +12,12 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
+@ActiveProfiles("application") // Like this
 public class PostsRepositoryTest {
 
     @Autowired
@@ -35,7 +37,7 @@ public class PostsRepositoryTest {
     	//given
     	LocalDateTime now = LocalDateTime.now();
         postsRepository.save(Posts.builder()
-                .title("테스트 게시글")
+                .title("테스트 게시글12312")
                 .content("테스트 본문")
                 .author("jojoldu@gmail.com")
                 .build());
@@ -44,6 +46,7 @@ public class PostsRepositoryTest {
         
         //then
         Posts posts=postList.get(0);
+        System.out.println(posts.getTitle());
         assertTrue(posts.getCreatedDate().isAfter(now));
         assertTrue(posts.getModifiedDate().isAfter(now));
         
