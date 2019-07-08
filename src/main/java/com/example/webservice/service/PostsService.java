@@ -7,7 +7,10 @@ import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Service;
 
+import com.example.webservice.domain.Posts;
 import com.example.webservice.domain.PostsRepository;
+import com.example.webservice.dto.PostDetailRequestDto;
+import com.example.webservice.dto.PostsDetailResponseDto;
 import com.example.webservice.dto.PostsMainResponseDto;
 import com.example.webservice.dto.PostsSaveRequestDto;
 
@@ -29,5 +32,10 @@ public class PostsService {
 		return postsRepository.findAllDesc()
 				.map(PostsMainResponseDto::new)
 				.collect(Collectors.toList());
+	}
+	@Transactional
+	public PostsDetailResponseDto findOnePost(PostDetailRequestDto dto) {
+		Posts p=postsRepository.getOne(dto.getPid());
+		return new PostsDetailResponseDto(p);
 	}
 }

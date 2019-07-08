@@ -26,7 +26,7 @@
             {{#each posts}}
                 <tr>
                     <td>{{id}}</td>
-                    <td>{{title}}</td>
+                    <td><button class="tbtn" data-toggle="modal" data-target="#detailPostsModal" style="background:none; border-style:none" type="button" value="{{id}}">{{title}}</button></td>
                     <td>{{author}}</td>
                     <td>{{modifiedDate}}</td>
                 </tr>
@@ -35,6 +35,34 @@
         </table>
     </div>
 
+	
+	
+	<!-- Modal 영역 -->
+    <div class="modal fade" id="detailPostsModal" tabindex="-1" role="dialog" aria-labelledby="detailPostsLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5  class="modal-title" id="savePostsLabel">
+                    	<input type="text" id="detailtitle" readonly/>
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="content"> 내용 </label>
+                        <textarea class="form-control" id="detailcontent">
+                        	
+                        </textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">취소</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- Modal 영역 -->
     <div class="modal fade" id="savePostsModal" tabindex="-1" role="dialog" aria-labelledby="savePostsLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
