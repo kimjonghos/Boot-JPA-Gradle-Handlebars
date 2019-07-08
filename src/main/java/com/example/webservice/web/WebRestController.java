@@ -25,10 +25,4 @@ public class WebRestController {
 	public PostsDetailResponseDto detailPost(@RequestBody PostDetailRequestDto dto) {
 		return postsService.findOnePost(dto);
 	}
-//	@PostMapping("/detail")
-//	public void detailPost(@RequestParam("pid") String pid) {
-//		System.out.println(11);
-//		postsService.findPost(Long.parseLong(pid));
-//		System.out.println(22);
-//	}
 }
