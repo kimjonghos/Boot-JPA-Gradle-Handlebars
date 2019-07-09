@@ -59,21 +59,21 @@ public class PostServiceTest {
 		assertThat(posts.getTitle()).isEqualTo(dto.getTitle());
 	}
 
-	@Test
-	public void loadOnePostDetail() {
-
-		// given
-		PostsSaveRequestDto dto = PostsSaveRequestDto.builder().
-				author("jojoldu@gmail.com").
-				content("테스트")
-				.title("테스트 타이틀").build();
-
-		// when
-		postsService.save(dto);
-		PostDetailRequestDto d=new PostDetailRequestDto("1");
-		PostsDetailResponseDto p = postsService.findOnePost(d);
-		System.out.println(p.getTitle());
-		assertThat(p.getId()).isEqualTo((long) 1);
-	}
+//	@Test
+//	public void loadOnePostDetail() {
+//
+//		// given
+//		PostsSaveRequestDto dto = PostsSaveRequestDto.builder().
+//				author("jojoldu@gmail.com").
+//				content("테스트")
+//				.title("테스트 타이틀").build();
+//
+//		// when
+//		postsService.save(dto);
+//		PostDetailRequestDto d=new PostDetailRequestDto("1");
+//		PostsDetailResponseDto p = postsService.findOnePost(d);
+//		System.out.println(p.getTitle());
+//		assertThat(p.getId()).isEqualTo((long) 1);
+//	}
 
 }
