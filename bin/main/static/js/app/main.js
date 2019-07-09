@@ -19,15 +19,21 @@ var main = {
 		$.ajax({
 			type : 'POST',
 			url : '/posts',
-			dataType : 'json',
+//			dataType : 'text',
 			contentType : 'application/json; charset=utf-8',
-			data : JSON.stringify(data)
-		}).done(function() {
-			alert('Registed');
-			location.reload();
-		}).fail(function(error) {
-			alert(error);
+			data : JSON.stringify(data),
+			success :function(re){
+				location.reload();
+			},
+			error : function(err){
+				alert(err);
+			}
 		});
+//		.done(function() {
+//			location.href='/';
+//		}).fail(function(error) {
+//			alert(JSON.stringify(error));
+//		});
 	},
 	load : function(t) {
 		var d = t.target;
@@ -42,7 +48,6 @@ var main = {
 			contentType : 'application/json; charset=utf-8',
 			data : JSON.stringify(data)
 		}).done(function(dd) {
-			
 			$('#detailcontent').val(dd.content);
 			$('#detailtitle').val(dd.title);
 			//location.reload();
