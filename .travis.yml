@@ -16,12 +16,11 @@ cache:
 
 script: "./gradlew clean build"
 
-# CI 실행 완료시 메일로 알람
-notifications:
-  email:
-    recipients:
-      - olikuj933@gmail.com 
-      
+before_deploy:
+  - zip -r bootTest *
+  - mkdir -p deploy
+  - mv bootTest.zip deploy/bootTest.zip
+
 deploy:
   - provider: s3
     access_key_id: $AWS_ACCESS_KEY # Travis repo settings에 설정된 값
@@ -35,3 +34,9 @@ deploy:
       repo: kimjonghos/boot-jpa-gradle-handlebars #Github 주소
       branch: master
       
+# CI 실행 완료시 메일로 알람
+notifications:
+  email:
+    recipients:
+      - olikuj933@gmail.com 
+
