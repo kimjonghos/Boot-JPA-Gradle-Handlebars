@@ -7,18 +7,17 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.ActiveProfiles;
+import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import com.example.webservice.domain.Posts;
 import com.example.webservice.domain.PostsRepository;
-import com.example.webservice.dto.PostDetailRequestDto;
-import com.example.webservice.dto.PostsDetailResponseDto;
 import com.example.webservice.dto.PostsSaveRequestDto;
 
 @RunWith(SpringRunner.class)
+@TestPropertySource(properties = { "spring.config.location=classpath:application-test.yml" })
 @SpringBootTest
-@ActiveProfiles("application") // Like this
+
 public class PostServiceTest {
 
 	@Autowired
