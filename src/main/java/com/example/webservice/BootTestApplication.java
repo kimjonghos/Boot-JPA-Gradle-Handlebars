@@ -12,7 +12,7 @@ public class BootTestApplication {
             + "classpath:application.yml,"
 			//+"..\\..\\config\\bootTest\\real-application.yml";
 			//+"D:\\my\\STUDY\\MY_WORKS\\config\\bootTest\\real-application.yml";
-            + "/app/config/bootTest/real-application.yml";
+            + "/home/ec2-user/app/config/bootTest/real-application.yml"; //linux
 	
 	public static void main(String[] args) {
 		new SpringApplicationBuilder(BootTestApplication.class)
