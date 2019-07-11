@@ -10,9 +10,9 @@ public class BootTestApplication {
 	
 	public static final String APPLICATION_LOCATIONS = "spring.config.location="
             + "classpath:application.yml,"
-			+"..\\..\\config\\bootTest\\real-application.yml";
+			//+"..\\..\\config\\bootTest\\real-application.yml";
 			//+"D:\\my\\STUDY\\MY_WORKS\\config\\bootTest\\real-application.yml";
-            //+ "/app/config/springboot-webservice/real-application.yml";
+            + "/app/config/bootTest/real-application.yml";
 	
 	public static void main(String[] args) {
 		new SpringApplicationBuilder(BootTestApplication.class)
