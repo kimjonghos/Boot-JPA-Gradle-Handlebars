@@ -11,14 +11,12 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 public class BootTestApplication {
 	
 	public static final String APPLICATION_LOCATIONS = "spring.config.location="
-            + "classpath:application.yml,"
-			//+"..\\..\\config\\bootTest\\real-application.yml";
-            + "/home/ec2-user/app/config/bootTest/real-application.yml";
+            + "classpath:application.yml";
+			//+"..\\..\\config\\bootTest\\real-db.yml";
+            //+ "/home/ec2-user/app/config/bootTest/real-application.yml";
 
     public static void main(String[] args) {
-    	Path currentRelativePath = Paths.get("");
-        String s = currentRelativePath.toAbsolutePath().toString();
-        System.out.println(s);
+
         new SpringApplicationBuilder(BootTestApplication.class)
                 .properties(APPLICATION_LOCATIONS)
                 .run(args);
