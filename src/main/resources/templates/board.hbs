@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>스프링부트 웹서비스</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <link rel="stylesheet" href="/css/lib/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/app/board.css">
+</head>
+<body>
+    <h1>!!호롤룰루호롤룰루호롤룰루!!</h1>
+    <div class="col-md-12">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#savePostsModal">글 등록</button>
+        <br/>
+        <br/>
+        <!-- 목록 출력 영역 -->
+        <table class="table table-horizontal table-bordered">
+            <thead class="thead-strong">
+                <tr>
+                    <th>게시글번호</th>
+                    <th>제목</th>
+                    <th>작성자</th>
+                    <th>최종수정일</th>
+                </tr>
+            </thead>
+            <tbody id="tbody">
+            {{#each posts}}
+                <tr>
+                    <td>{{id}}</td>
+                    <td><button class="tbtn" data-toggle="modal" data-target="#detailPostsModal" style="background:none; border-style:none" type="button" value="{{id}}">{{title}}</button></td>
+                    <td>{{author}}</td>
+                    <td>{{modifiedDate}}</td>
+                </tr>
+            {{/each}}
+            </tbody>
+        </table>
+    </div>
+	{{> board_content_modal}}
+	{{> board_regist_modal}}
+    <script type="text/javascript" src="/js/lib/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="/js/lib/bootstrap.min.js"></script>
+    <script src="/js/app/board.js"></script>
+
+</body>
+</html>

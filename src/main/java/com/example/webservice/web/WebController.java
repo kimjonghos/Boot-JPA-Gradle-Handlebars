@@ -16,9 +16,16 @@ public class WebController {
 	
 	@GetMapping("/")
 	public String main(Model model) {
-		model.addAttribute("posts",postsService.findAllDesc());
-		return "main";
+		
+		return "index";
 	}
+	@GetMapping("/board")
+	public String board(Model model) {
+		System.out.println(postsService.findAllDesc().size());
+		model.addAttribute("posts",postsService.findAllDesc());
+		return "board";
+	}
+	
 	
 	
 }

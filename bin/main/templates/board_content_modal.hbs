@@ -1,0 +1,42 @@
+<!-- board_detail_Modal 영역 -->
+    <div class="modal fade" id="detailPostsModal" tabindex="-1" role="dialog" aria-labelledby="detailPostsLabel" aria-hidden="true">
+        <div style="max-width:60%"class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                	<input type="hidden" id="post_id"/>
+                    <h5  class="modal-title" id="savePostsLabel">
+                    	<input type="text" id="detailtitle" readonly/>
+                    </h5>
+                    <button id="modal_close_btn" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="content"> 내용 </label>
+                        <textarea class="form-control" id="detailcontent"></textarea>
+                    </div>
+                    <div style="padding-left:89.5%">
+                    	<button style="float:right" type="button" class="btn btn-secondary" data-dismiss="modal">취소</button>
+                    </div>
+                </div>
+                <div id="modal-comment">
+                	<label for="content" style="margin-left:4%"> 댓글 </label>
+                	<div>
+	                	<textarea  id="comment_content" name="comment_content" rows="5"></textarea>
+	                </div>
+	                <div class="regist_btn_div">
+	                
+	                	<input type="text" placeholder="작성자" id="comment_author" maxlength="5"/>
+	                	<button class="btn btn-secondary" type="button" id="comment_regist_btn">등록</button>
+	                	<input type="text" placeholder="비밀번호" id="comment_pwd" maxlength="4"/>
+	                </div>
+	            <!-- 댓글 목록 영역 -->
+                <div id="comment_list_div">
+                	
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    

@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.example.webservice.domain.Posts;
 import com.example.webservice.domain.PostsRepository;
+import com.example.webservice.dto.CommentsListResponseDto;
 import com.example.webservice.dto.PostDetailRequestDto;
 import com.example.webservice.dto.PostsDetailResponseDto;
 import com.example.webservice.dto.PostsMainResponseDto;
@@ -21,6 +22,7 @@ import lombok.AllArgsConstructor;
 public class PostsService {
 
 	private PostsRepository postsRepository;
+	private CommentsService commentsService;
 	
 	@Transactional
 	public Long save(PostsSaveRequestDto dto) {
@@ -28,14 +30,23 @@ public class PostsService {
 	}
 	
 	@Transactional
+	public void deleteById(PostDetailRequestDto dto) {
+		postsRepository.deleteById(dto.getPid());
+	}
+	@Transactional
 	public List<PostsMainResponseDto> findAllDesc(){
 		return postsRepository.findAllDesc()
 				.map(PostsMainResponseDto::new)
 				.collect(Collectors.toList());
 	}
 	@Transactional
+	public void deleteAll() {
+		postsRepository.deleteAll();
+	}
+	@Transactional
 	public PostsDetailResponseDto findOnePost(PostDetailRequestDto dto) {
 		Posts p=postsRepository.getOne(dto.getPid());
-		return new PostsDetailResponseDto(p);
+		List<CommentsListResponseDto> c=commentsService.findByPostsId(p);
+		return new PostsDetailResponseDto(p,c);
 	}
 }

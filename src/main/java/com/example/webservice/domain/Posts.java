@@ -1,22 +1,33 @@
 package com.example.webservice.domain;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
+@ToString
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
 @Entity
-public class Posts extends BaseTimeEntity{
+@JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
+public class Posts extends BaseTimeEntity implements Serializable{
 
-    @Id
+
+	private static final long serialVersionUID = 1L;
+
+	@Id
+    @Column
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
 
@@ -33,5 +44,11 @@ public class Posts extends BaseTimeEntity{
         this.title = title;
         this.content = content;
         this.author = author;
+    }
+    public Posts(Long id,String title,String content,String author) {
+    	this.id=id;
+    	this.title=title;
+    	this.content=content;
+    	this.author=author;
     }
 }

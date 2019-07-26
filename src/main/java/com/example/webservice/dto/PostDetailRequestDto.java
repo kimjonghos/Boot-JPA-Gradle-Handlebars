@@ -13,8 +13,8 @@ public class PostDetailRequestDto {
 	private Long pid;
 	
 	@Builder
-	public PostDetailRequestDto(String pid) {
-		this.pid=Long.parseLong(pid);
+	public PostDetailRequestDto(Long pid) {
+		this.pid=pid;
 	}
 	
 }

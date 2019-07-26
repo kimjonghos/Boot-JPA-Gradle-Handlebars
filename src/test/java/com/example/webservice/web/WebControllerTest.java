@@ -21,9 +21,9 @@ public class WebControllerTest {
 	@Test
 	public void loading_main_page() {
 		//when
-		String body=this.restTemplate.getForObject("/",String.class);
+		String body=this.restTemplate.getForObject("/board",String.class);
 		
 		//then
-		assertThat(body).contains("호롤룰루호롤룰루호롤룰루");
+		assertThat(body).contains("!!호롤룰루호롤룰루호롤룰루!!");
 	}
 }
