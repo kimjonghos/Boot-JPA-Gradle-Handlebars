@@ -7,7 +7,6 @@ import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Service;
 
-import com.example.webservice.domain.Comments;
 import com.example.webservice.domain.CommentsRepository;
 import com.example.webservice.domain.Posts;
 import com.example.webservice.dto.CommentsDeleteRequestDto;
