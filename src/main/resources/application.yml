@@ -1,4 +1,7 @@
 spring:
+  devtools:
+    livereload:
+      enabled: true 
   profiles:
     active: local # 기본 환경 선택
   jpa:
@@ -6,6 +9,7 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.MySQL5InnoDBDialect
 spring.profiles.include: real-db
+
 # local 환경
 ---
 spring:

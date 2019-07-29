@@ -7,7 +7,9 @@
     
     <link rel="stylesheet" href="/css/lib/bootstrap.min.css">
     <link rel="stylesheet" href="/css/app/board.css">
+     <script type="text/javascript" src="/js/lib/jquery-3.4.1.min.js"></script>
 </head>
+
 <body>
     <h1>!!호롤룰루호롤룰루호롤룰루!!</h1>
     <div class="col-md-12">
@@ -26,7 +28,7 @@
             </thead>
             <tbody id="tbody">
             {{#each posts}}
-                <tr>
+            		<tr>
                     <td>{{id}}</td>
                     <td><button class="tbtn" data-toggle="modal" data-target="#detailPostsModal" style="background:none; border-style:none" type="button" value="{{id}}">{{title}}</button></td>
                     <td>{{author}}</td>
@@ -34,13 +36,31 @@
                 </tr>
             {{/each}}
             </tbody>
+            
         </table>
+    </div>
+    <input type="hidden" value="{{pageinfo.pageNum}}" id="pageNum"/>
+    <div id="paging_div">
+    	{{#if pageinfo.prev}}
+    		<button class="page_btn" id="page_prev" value="{{pageinfo.prev}}" type="button">prev</button>
+    	{{/if}}
+    	<span id='page_btn_span'>
+    	<script>
+    		for(var i={{pageinfo.startPage}}; i<={{pageinfo.endPage}};i++){
+    			$('#page_btn_span').append('<button class="page_btn page_num_btn" type="button">'+i+'</button>');
+    		}
+    	</script>
+    	</span>
+    	{{#if pageinfo.next}}
+    		<button class="page_btn" id="page_next" value="{{pageinfo.next}}" type="button">next</button>
+    	{{/if}}
     </div>
 	{{> board_content_modal}}
 	{{> board_regist_modal}}
-    <script type="text/javascript" src="/js/lib/jquery-3.4.1.min.js"></script>
+    
     <script type="text/javascript" src="/js/lib/bootstrap.min.js"></script>
     <script src="/js/app/board.js"></script>
-
+   
+	
 </body>
 </html>

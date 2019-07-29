@@ -7,7 +7,8 @@ import java.util.Optional;
 import com.example.webservice.domain.Posts;
 
 import lombok.Getter;
-
+import lombok.ToString;
+@ToString
 @Getter
 public class PostsMainResponseDto {
 

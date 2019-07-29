@@ -6,6 +6,9 @@
 	height:350px;
 	overflow-y:auto;
 }
+#tbody tr:nth-child(even){
+	background-color:#f5f5f5;
+}
 textarea{
 	resize:none;
 }
@@ -31,4 +34,18 @@ textarea{
 #comment_list_div{
 	padding-left:3.5%;
 	margin-top:3%;
+}
+#paging_div{
+	display:table;
+	margin:0 auto;
+}
+.page_btn{
+	border-style:none;
+	background-color:#e4e4e4;
+}
+#paging_div button:hover{
+	background-color:silver;
+}
+#paging_div button:visited{
+	background-color:red;
 }
