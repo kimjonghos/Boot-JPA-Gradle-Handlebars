@@ -1,21 +1,9 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-    <title>스프링부트 웹서비스</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    
     <link rel="stylesheet" href="/css/lib/bootstrap.min.css">
     <link rel="stylesheet" href="/css/app/board.css">
      <script type="text/javascript" src="/js/lib/jquery-3.4.1.min.js"></script>
-</head>
 
 <body>
-    <h1>!!호롤룰루호롤룰루호롤룰루!!</h1>
     <div class="col-md-12">
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#savePostsModal">글 등록</button>
-        <br/>
-        <br/>
         <!-- 목록 출력 영역 -->
         <table class="table table-horizontal table-bordered">
             <thead class="thead-strong">
@@ -57,10 +45,6 @@
     </div>
 	{{> board_content_modal}}
 	{{> board_regist_modal}}
-    
+    <button style="float:right;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#savePostsModal">글 등록</button>
     <script type="text/javascript" src="/js/lib/bootstrap.min.js"></script>
     <script src="/js/app/board.js"></script>
-   
-	
-</body>
-</html>

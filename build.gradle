@@ -42,9 +42,5 @@ dependencies {
 	compile 'pl.allegro.tech.boot:handlebars-spring-boot-starter:0.3.0'
 	compile("org.mariadb.jdbc:mariadb-java-client")
 	compile("org.springframework.boot:spring-boot-devtools")
-	compile 'com.github.jknack:handlebars-helpers:4.0.6',
-        'com.github.jknack:handlebars-jackson2:4.0.6',
-        'com.github.jknack:handlebars-humanize:4.0.6',
-        'com.github.jknack:handlebars-markdown:4.0.6'
-	
+	compile 'org.apache.httpcomponents:httpclient:4.5.9'
 }

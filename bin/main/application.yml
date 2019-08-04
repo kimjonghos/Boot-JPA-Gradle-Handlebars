@@ -10,6 +10,7 @@ spring:
         dialect: org.hibernate.dialect.MySQL5InnoDBDialect
 spring.profiles.include: real-db
 
+
 # local 환경
 ---
 spring:
@@ -23,8 +24,9 @@ spring:
   h2:
     console:
       enabled: true
-
-
+kauth:
+  RestApiKey: 747c264aec4ef413486e0c340bd9d147
+  Redirect_URI: http://localhost:8080/kakaoSuccess
 # 운영 환경
 ---
 spring.profiles: set1

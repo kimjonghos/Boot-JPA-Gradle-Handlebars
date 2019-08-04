@@ -8,11 +8,62 @@
     <link rel="stylesheet" href="/css/app/index.css">
 </head>
 <body>
-	<div>
-		<buttion id="btn-goboard" type="button">게시판</button>
+	<div id="index_main_div">
+		<div id="header_div">
+			<h2 id="main_title">⊙ . . ⊙</h2>
+		</div>
+		<div id="nav_div" class="clearfix">
+			<div id="btn-goboard" class='nav_ele_div'>게시판</div>
+			<div class='nav_ele_div'>menu2</div>
+			<div class='nav_ele_div'>menu3</div>
+		</div>
+		<div id="content_div">
+			<div id="login_div">
+				<div id="my_login_div">
+					<div id="login_input_div">
+						{{#if kakaoid}}
+							{{profile_nickname}}님 환영합니다
+						{{else}}
+							<input class="login_input" type="text" size="15"/>
+							<input class="login_input" type="text" size="15"/>
+						{{/if}}
+					</div>
+					
+						{{#if kakaoid}}
+							{{#if profile_image}}
+								<!--<img src="{{profile_image}}">-->
+								<div style='background-repeat:no-repeat; 
+								background-size:cover;background-image:url("{{profile_image}}")' class='claerfix' id='login_btn_div'>
+							{{else}}
+								<div class='claerfix' style='background-color:#a2cfff' id='login_btn_div'>
+									No Image
+							{{/if}}
+						{{else}}
+							<div class="claerfix" id="login_btn_div">
+							<button class="btn-warning" id="login_btn">Login</button>
+						{{/if}}	
+					</div>
+					
+				</div>
+				<div id="oauth_login_div">
+					{{#if kakaoid}}
+						<button id="logout_btn" type="button">Logout</button>
+					{{else}}
+						<button id="kakao_login_btn" type="button">Login for Kakao</button>
+					{{/if}}
+					
+				</div>
+			</div>
+			<div class="claerfix" id="main_div">
+				{{#if board}}
+					{{> board}}
+				{{else}}
+					{{> indexContent}}
+				{{/if}}
+			</div>
+			
+		</div>
 	</div>
-	<div id="div_box">box</div>
-	
     <script type="text/javascript" src="/js/lib/jquery-3.4.1.min.js"></script>
     <script type="text/javascript" src="/js/lib/bootstrap.min.js"></script>
     <script type="text/javascript" src="/js/app/index.js"></script>

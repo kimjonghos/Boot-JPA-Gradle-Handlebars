@@ -1,4 +1,102 @@
-
+body, html{
+	width:100%;
+	height:100%; 
+	background-color:#414a41;
+}
 #div_box{
 	border:1px solid black;
+}
+#index_main_div{
+	min-width:500px;
+	max-width:80%;
+	margin:0 auto;
+	height:100%;
+	min-height:98%;
+	background-color:#ffeb3b6e;
+}
+#index_main_div h2{
+	text-align:center;
+}
+#header_div{
+	border-bottom:1px solid silver;
+}
+.nav_ele_div{
+	float:left;
+	width:33.33%;
+	text-align:center;
+}
+#nav_div{
+	border-bottom:1px solid silver;
+	margin-bottom:50px;
+}
+.nav_ele_div:hover{
+	cursor: pointer;
+	background-color:#e4e451;
+}
+.claerfix::after{
+	clear:both;
+}
+#login_div{
+	height:100%;
+	margin-left:1%;
+	margin-right:1%;
+	border:1px solid silver;
+	width:20%;
+	float:left;
+}
+#main_div{
+	height:100%;
+	width:75%;
+	border:1px solid silver;
+	float:left;
+}
+#content_div{
+	height:75%;
+}
+.login_input{
+	height:47%;
+	background-color:#e8e881;
+	border-style:none;
+}
+#my_login_div{
+	padding:4%;
+	height:80px;
+}
+#login_input_div{
+	width:60%;
+	float:left;
+	height:100%;
+}
+.login_input:last-child{
+	margin-top:4%;
+}
+#login_btn_div{
+	float:left;
+	margin-left:8%;
+	height:100%;
+	width:30%;
+	
+}
+#login_btn{
+	height:100%;
+	width:100%;
+	border-style:none;
+	color:#7d6c6c;
+}
+#kakao_login_btn{
+	background-color:#f9df33;
+	border-style:none;
+	width:96%;
+	margin-left:2%;
+	color:#7d6c6c;
+}
+#logout_btn{
+	border-style:none;
+	background-color:#fef8cb;
+	width:96%;
+	margin-left:2%;
+	color:#7d6c6c;
+}
+#main_title{
+	cursor:pointer;
 }
