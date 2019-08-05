@@ -14,7 +14,7 @@ public class BootTestApplication {
 //			+",file:..\\..\\config\\bootTest\\real-db.yml"
 //			+",file:..\\..\\config\\bootTest\\kauth.yml";
 	
-            + "file:/home/ec2-user/app/config/bootTest/real-db.yml"
+            + ",file:/home/ec2-user/app/config/bootTest/real-db.yml"
             +",file:/home/ec2-user/app/config/bootTest/kauth.yml";
 
     public static void main(String[] args) {
