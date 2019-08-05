@@ -83,6 +83,7 @@ body, html{
 	width:100%;
 	border-style:none;
 	color:#7d6c6c;
+	overflow:scroll;
 }
 #kakao_login_btn{
 	background-color:#f9df33;
@@ -97,7 +98,7 @@ body, html{
 	width:96%;
 	margin-left:2%;
 	color:#7d6c6c;
-	overflow:scroll;
+	
 }
 #main_title{
 	cursor:pointer;
