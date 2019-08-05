@@ -25,7 +25,8 @@ var index = {
 		location.href="/board/1";
 	},
 	kakao_login_call:function(){
-		location.href='https://kauth.kakao.com/oauth/authorize?client_id=747c264aec4ef413486e0c340bd9d147&redirect_uri=http://localhost:8080/kakaoSuccess&response_type=code';
+		location.href='https://kauth.kakao.com/oauth/authorize?client_id=747c264aec4ef413486e0c340bd9d147&redirect_uri='
+			+'http://'+$(location).attr('host')+'/kakaoSuccess'+'&response_type=code';
 	}
 	
 };
